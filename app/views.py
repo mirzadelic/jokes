@@ -96,7 +96,7 @@ class CategorySerializer(serializers.ModelSerializer):
         fields = ('id', 'name')
 
 
-class CategoryViewSet(viewsets.ModelViewSet):
+class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     pagination_class = None
