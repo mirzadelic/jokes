@@ -36,8 +36,8 @@ class JokeViewSet(viewsets.ModelViewSet):
     serializer_class = JokeSerializer
 
     # enable ascending and descending ordering/sorting by field 'created_at'
-    filter_backends = (filters.OrderingFilter,)
     ordering_fields = ('created_at',)
+    filter_fields = ('category',)
 
     # disable updating jokes with 'put' method
     http_method_names = ['get', 'post', 'head']

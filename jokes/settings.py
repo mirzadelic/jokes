@@ -129,25 +129,20 @@ STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 15
+    'PAGE_SIZE': 15,
+
+    'DEFAULT_FILTER_BACKENDS': (
+        'rest_framework.filters.DjangoFilterBackend',
+        'rest_framework.filters.OrderingFilter',
+    )
 }
 
 
 SUIT_CONFIG = {
-    # header
     'ADMIN_NAME': 'Vicevi',
-
-    # menu
     'SEARCH_URL': '',
-    # 'MENU_ICONS': {
-    #    'sites': 'icon-leaf',
-    #    'auth': 'icon-lock',
-    # },
     'MENU': (
         {'label': 'Settings', 'icon': 'icon-cog', 'models': ('auth.user', 'auth.group')},
         {'label': 'Vicevi', 'icon': 'icon-list', 'app': 'app'},
     ),
-
-    # misc
-    # 'LIST_PER_PAGE': 15
 }
