@@ -1,4 +1,4 @@
-from rest_framework import serializers, viewsets, filters, status
+from rest_framework import serializers, viewsets, status
 from rest_framework.decorators import detail_route
 from rest_framework.response import Response
 from models import *
